@@ -21,19 +21,6 @@ public class WebCrawler
     Set<String> links;
     Set<String> images;
 
-    private static String loadWebsiteBody(String website) throws IOException
-    {
-        InputStream stream = new URL(website).openStream();
-        String body;
-        try(Scanner scanner = new Scanner(stream))
-        {
-            body = scanner.useDelimiter("\\A").next();
-        }
-
-        return body;
-    }
-
-
     public WebCrawler(String website) throws IOException
     {
         String url[] = website.split("://");
